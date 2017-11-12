@@ -1,3 +1,74 @@
 page-movie-detail-view {
-
+    .detailBanner{
+        height:173.25px;
+        position: relative;
+    }
+    .grid{
+        padding:10px 5px;
+    }
+    .fade-out{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 173.25px;
+        z-index: 99;
+        background:-webkit-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(26,37,47,1) 100%
+        ); 
+        background-image: -moz-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(26,37,47,1) 100%
+        );
+        background-image: -o-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(26,37,47,1) 100%
+        );
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(26,37,47,1) 100%
+        );
+        background-image: -ms-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(26,37,47,1) 100%
+        );
+    }
+    .poster-and-title{
+        border-radius: 4px;
+        margin-top:-50px;
+        z-index: 101;
+        position: relative;
+    }
+    .lead-title{
+        position: relative;
+        top: .5em;
+        padding-top:0;
+        padding-bottom: 0;
+        margin-top:0;
+        margin-bottom: 0;
+        font-weight: 300;
+        color: #fff;
+    }
+    .poster img{
+        border-radius:4px;
+    }
+    .ratting{
+        position: relative;
+        clear:both;
+        padding:8px 0;
+    }
+    .star{
+        position: relative;
+        font-size:18px;
+    }
+    #genreGrid{
+        padding-top:5px;
+        padding-bottom:5px;
+    }
+    .rattingInNumbers{
+        position: relative;
+        top: 5px;
+        padding: 8px 0;
+        letter-spacing: 2px;
+    }
 }
