@@ -1,18 +1,53 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar transparent>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu" class="page-menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title class="page-title">Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content class="back">
+  <div class="banner">
+    <ion-slides autoplay="3000" loop="true" speed="600">
+      <ion-slide >
+        <img class="lead-banner" src="/assets/image/avengers.png">
+        <div class="fade-out" padding>
+          <h3 class="lead-title">Avengers - The age of ultron</h3>
+          <div class="ratting">
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star-outline" class="star ratting-off"></ion-icon>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide >
+        <img class="lead-banner" src="/assets/image/IronMan3Wallpaper.jpg">
+        <div class="fade-out" padding>
+          <h3 class="lead-title">Iron man - 3</h3>
+          <div class="ratting">
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star" class="star ratting-on"></ion-icon>
+            <ion-icon name="star-half" class="star ratting-off"></ion-icon>
+          </div>
+        </div>
+      </ion-slide>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    </ion-slides>
+  </div>
+  <div class="latest">
+    <p class="section-title"padding>Latest releases</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 class="latest-section-item" *ngFor="let movie of movies">
+          <img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" (click)="navigate('MovieDetailViewPage',movie)">
+          <p class="latest-title"  (click)="navigate('MovieDetailViewPage',movie)">{{movie.title}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

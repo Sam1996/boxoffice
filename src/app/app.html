@@ -1,14 +1,21 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
+  <ion-header no-border>
+    <ion-toolbar color="darksky">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
+    <p class="subTitles">Movies</p>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button menuClose ion-item *ngFor="let m of moviepages" (click)="openPage(m)">
+        {{m.title}}
+      </button>
+    </ion-list>
+    <p class="subTitles">TV Shows</p>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let t of tvpages" (click)="openPage(t)">
+        {{t.title}}
       </button>
     </ion-list>
   </ion-content>

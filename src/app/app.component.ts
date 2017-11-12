@@ -5,6 +5,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { TopRatedMoviesPage } from '../pages/top-rated-movies/top-rated-movies';
+import { UpCommingMoviesPage } from '../pages/up-comming-movies/up-comming-movies';
+import { NowPlayingMoviesPage } from '../pages/now-playing-movies/now-playing-movies';
+import { PopularMoviesPage } from '../pages/popular-movies/popular-movies';
+import { TopRatedTvShowsPage } from '../pages/top-rated-tv-shows/top-rated-tv-shows';
+import { OnAirTvShowsPage } from '../pages/on-air-tv-shows/on-air-tv-shows';
+import { PopularTvShowsPage } from '../pages/popular-tv-shows/popular-tv-shows';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +21,25 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  moviepages: Array<{title: string, component: any}>;
+  tvpages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
+    this.moviepages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Top Rated', component: TopRatedMoviesPage },
+      { title: 'Upcomming', component: UpCommingMoviesPage },
+      { title: 'Now Playing', component: NowPlayingMoviesPage },
+      { title: 'Popular', component: PopularMoviesPage }
+    ];
+    this.tvpages = [
+      { title: 'Top Rated', component: TopRatedTvShowsPage },
+      { title: 'On Air', component: OnAirTvShowsPage },
+      { title: 'Popular', component: PopularTvShowsPage }
     ];
 
   }
