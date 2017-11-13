@@ -71,4 +71,31 @@ page-movie-detail-view {
         padding: 8px 0;
         letter-spacing: 2px;
     }
+    .genre{
+        padding:2px 5px;
+        border:1px solid #e84a64;
+        color:#fff;
+        background: #e84a64;
+        border-radius:25px;
+        float: left;
+        list-style-type: none;
+        margin-bottom: 5px;
+        margin-right:2px;
+    }
+    .overviewGrid{
+        padding-top:0;
+        ion-col{
+            padding-top:0;
+        }
+    }
+    .castDetails{
+        background: transparent;
+        ion-item{
+            background: transparent;
+            color:#ffffff;
+            h2{
+                color:#fcc805;
+            }
+        }
+    }
 }

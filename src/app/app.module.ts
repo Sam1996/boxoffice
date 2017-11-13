@@ -17,6 +17,7 @@ import { PopularTvShowsPage } from '../pages/popular-tv-shows/popular-tv-shows';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MovieProvider } from '../providers/movie/movie';
+import { CastsProvider } from '../providers/casts/casts';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MovieProvider } from '../providers/movie/movie';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MovieProvider,
+    CastsProvider,
   ]
 })
 export class AppModule {}

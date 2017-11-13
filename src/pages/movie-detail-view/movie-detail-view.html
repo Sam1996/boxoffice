@@ -41,10 +41,10 @@
           <ion-grid id="genreGrid">
             <ion-row>
               <div class="genres">
-                <small>Geners : 
+                <small>
                   <span *ngFor="let genres of movie">
                     <span *ngFor="let genre of genres['data']">
-                      <span class="genre" *ngFor="let g of genre['genres'];let isLast=last"> {{g.name}}{{isLast ? '' : ', '}}</span>
+                      <li class="genre" *ngFor="let g of genre['genres'];let isLast=last"> {{g.name}}</li>
                     </span>
                   </span>
                 </small>
@@ -54,10 +54,19 @@
         </ion-col>
       </ion-row>
     </ion-grid>  
-    <ion-grid>
+    <ion-grid class="overviewGrid">
       <ion-row>
         <ion-col>{{movie[0]?.data[0]?.overview}}</ion-col>
       </ion-row>
     </ion-grid>  
+    <ion-list class="castDetails">
+      <ion-item *ngFor="let cast of casts" (click)="getIndivudualCast(cast.id)">
+        <ion-avatar item-start>
+          <img src="http://image.tmdb.org/t/p/original{{cast.profile_path}}" alt="{{cast.name}}">
+        </ion-avatar>
+        <h2>{{cast.name}}</h2>
+        <small>as {{cast.character}}</small>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
