@@ -1,0 +1,34 @@
+page-cast-detail {
+    .profile_banner{
+        height:160px;
+        background: url('../../assets/image/black-wallpaper-28.jpg');
+        background-position:contain;
+        position: relative;
+        z-index: -10;
+    }
+    .card{
+        position: relative;
+        background:#fff;
+        border-radius:8px;
+        margin:15px;
+        top:-80px;
+        z-index: 98;
+        .profile{
+            height: 0;
+        }
+        .profile img{
+            position: relative;
+            top:-55px;
+            width:75px;
+            height:75px;
+            border-radius: 50%;
+            z-index: 99;
+            box-shadow: 0 0 4px 4px rgba(0,0,0,0.33);
+            margin:0 auto;
+        }
+        .biography{
+            color:#333;
+            padding-top:30px;
+        }
+    }
+}

@@ -59,14 +59,16 @@
         <ion-col>{{movie[0]?.data[0]?.overview}}</ion-col>
       </ion-row>
     </ion-grid>  
+    <p class="subTitle">{{castSectionTitle}}</p>
     <ion-list class="castDetails">
-      <ion-item *ngFor="let cast of casts" (click)="getIndivudualCast(cast.id)">
+      <ion-item *ngFor="let cast of casts | slice:0:3" (click)="getIndivudualCast(cast.data.id)">
         <ion-avatar item-start>
-          <img src="http://image.tmdb.org/t/p/original{{cast.profile_path}}" alt="{{cast.name}}">
+          <img src="http://image.tmdb.org/t/p/w45{{cast.data.profile_path}}" alt="{{cast.name}}">
         </ion-avatar>
-        <h2>{{cast.name}}</h2>
+        <h2>{{cast.data.name}}</h2>
         <small>as {{cast.character}}</small>
       </ion-item>
     </ion-list>
+    <small *ngIf="casts">and more...</small>
   </div>
 </ion-content>

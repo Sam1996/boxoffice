@@ -98,4 +98,14 @@ page-movie-detail-view {
             }
         }
     }
+    .subTitle{
+        padding:5px 10px;
+        margin:0px;
+        font-size: 18px;
+    }
+    ion-item{
+        .item-inner{
+            border-bottom:none;
+        }
+    }
 }

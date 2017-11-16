@@ -1,6 +1,6 @@
 {
   "name": "boxoffice",
-  "app_id": "",
+  "app_id": "BOX123",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

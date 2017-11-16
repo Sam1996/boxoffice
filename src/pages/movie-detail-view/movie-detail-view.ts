@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, LoadingController , NavController, NavParams } from 'ionic-angular';
 import { MovieProvider} from '../../providers/movie/movie';
 import { CastsProvider } from '../../providers/casts/casts';
+import { CastDetailPage } from '../cast-detail/cast-detail';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/Rx';
+import 'rxjs/add/operator/mergeMap';
 /**
  * Generated class for the MovieDetailViewPage page.
  *
@@ -25,6 +29,7 @@ export class MovieDetailViewPage {
   decimalRating : any;
   noRating : any;
   casts : any;
+  castSectionTitle : String;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -36,6 +41,13 @@ export class MovieDetailViewPage {
     this.ErrOccured = false;
   }
 
+
+  getIndivudualCast(cast_id){
+     this.navCtrl.push(CastDetailPage,{
+       cast_id : cast_id
+     })
+  }
+
   ionViewDidLoad() {
     this.loader.present();
     this.movieProvider
@@ -45,7 +57,6 @@ export class MovieDetailViewPage {
             this.ErrOccured = true;
             let ErrMessage : String = "Error occured! Please try again"
           }else{
-            this.loader.dismiss(),
             this.movie = res,
             this.BannerImg = "http://image.tmdb.org/t/p/original"+res[0].data[0].backdrop_path,
             this.PosterImg = "http://image.tmdb.org/t/p/w185"+res[0].data[0].poster_path,
@@ -56,8 +67,19 @@ export class MovieDetailViewPage {
         }); 
     this.castsProvider
         .getCastsForMovie(this.movieID)
+        .switchMap((casts)=>{
+          let castsArray : Observable<any>[] = [];
+          for(let c of casts){
+            let character : String = c.character;
+            castsArray.push(this.castsProvider.getCasts(c.id)
+                                              .map(data=>({character,data})))
+          }
+          return Observable.forkJoin(castsArray);
+        })
         .subscribe(res => {
-          this.casts = getMainCasts(res),
+          this.casts = res,
+          this.castSectionTitle = "Casts";
+          this.loader.dismiss(),
           console.log(this.casts);
         });
 
@@ -87,5 +109,7 @@ export class MovieDetailViewPage {
     }
      
   }
+
+  
 
 }

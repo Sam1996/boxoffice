@@ -13,6 +13,7 @@ import { PopularMoviesPage } from '../pages/popular-movies/popular-movies';
 import { TopRatedTvShowsPage } from '../pages/top-rated-tv-shows/top-rated-tv-shows';
 import { OnAirTvShowsPage } from '../pages/on-air-tv-shows/on-air-tv-shows';
 import { PopularTvShowsPage } from '../pages/popular-tv-shows/popular-tv-shows';
+import { CastDetailPage } from '../pages/cast-detail/cast-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,7 +31,8 @@ import { CastsProvider } from '../providers/casts/casts';
     PopularMoviesPage,
     TopRatedTvShowsPage,
     OnAirTvShowsPage,
-    PopularTvShowsPage
+    PopularTvShowsPage,
+    CastDetailPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { CastsProvider } from '../providers/casts/casts';
     PopularMoviesPage,
     TopRatedTvShowsPage,
     OnAirTvShowsPage,
-    PopularTvShowsPage
+    PopularTvShowsPage,
+    CastDetailPage
   ],
   providers: [
     StatusBar,
